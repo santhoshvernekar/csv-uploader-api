@@ -28,14 +28,14 @@ public class ExerciseRepositoryTest {
     @Test
     public void test_Find_All_After_Insertion() {
         List<Exercise> previousExerciseList = exerciseRepository.findAll();
-        exerciseRepository.save(TestDataHelper.getNewExercise());
+        exerciseRepository.save(TestDataHelper.getNewExercise(2L));
         List<Exercise> newExerciseList = exerciseRepository.findAll();
         Assert.assertEquals(newExerciseList.size(), previousExerciseList.size() + 1);
     }
 
     @Test
     public void test_Delete_All() {
-        exerciseRepository.save(TestDataHelper.getNewExercise());
+        exerciseRepository.save(TestDataHelper.getNewExercise(3L));
         List<Exercise> previousExerciseList = exerciseRepository.findAll();
         exerciseRepository.deleteAll();
         List<Exercise> newExerciseList = exerciseRepository.findAll();
@@ -45,15 +45,15 @@ public class ExerciseRepositoryTest {
 
     @Test
     public void test_Find_One_By_Id() {
-        Exercise mockExercise = TestDataHelper.getNewExercise();
+        Exercise mockExercise = TestDataHelper.getNewExercise(4L);
         exerciseRepository.save(mockExercise);
-        Optional<Exercise> exercise = exerciseRepository.findById(1L);
+        Optional<Exercise> exercise = exerciseRepository.findById(4L);
         Assert.assertEquals(exercise.get().getCode(), mockExercise.getCode());
     }
 
     @Test
     public void test_Find_One_By_Code() {
-        Exercise mockExercise = TestDataHelper.getNewExercise();
+        Exercise mockExercise = TestDataHelper.getNewExercise(5L);
         exerciseRepository.save(mockExercise);
         Exercise exercise = exerciseRepository.getByCode(mockExercise.getCode());
         Assert.assertEquals(exercise.getCode(), mockExercise.getCode());

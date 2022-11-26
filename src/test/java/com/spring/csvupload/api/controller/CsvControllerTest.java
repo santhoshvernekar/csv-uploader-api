@@ -46,7 +46,7 @@ public class CsvControllerTest {
         MockitoAnnotations.initMocks(this);
         CsvController csvController = new CsvController(exerciseService);
         mockMvc = MockMvcBuilders.standaloneSetup(csvController).build();
-        when(exerciseService.getByCode(any())).thenReturn(ExerciseDtoConverter.fromEntity(TestDataHelper.getNewExercise())) ;
+        when(exerciseService.getByCode(any())).thenReturn(ExerciseDtoConverter.fromEntity(TestDataHelper.getNewExercise(1L)));
     }
 
     @Test
