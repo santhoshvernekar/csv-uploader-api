@@ -5,7 +5,6 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Objects;
 
 @Table
 @Entity
@@ -36,11 +35,4 @@ public class Exercise implements Serializable {
     @Column(name = "SORTING_PRIORITY")
     private Integer sortingPriority;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Exercise)) return false;
-        Exercise that = (Exercise) o;
-        return (!Objects.equals(id, that.id));
-    }
 }

@@ -12,8 +12,8 @@
     <groupId>com.spring.crud.demo</groupId>
     <artifactId>sample-spring-boot-bank-api</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>spring-boot-boiler-plate-api</name>
-    <description>Spring boot boilerPlate API code using JPA</description>
+    <name>csv-uploader-api</name>
+    <description>Spring boot API code for uploading csv file to database</description>
     <properties>
         <java.version>1.8</java.version>
         <cucumber.version>6.8.1</cucumber.version>
