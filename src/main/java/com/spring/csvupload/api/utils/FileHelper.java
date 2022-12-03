@@ -19,7 +19,10 @@ import java.util.List;
 @Slf4j
 public class FileHelper {
     public static final String TYPE = "text/csv";
-    public static int lengthConstraint = 2000;
+
+    private FileHelper(){
+        // Do Nothing
+    }
 
     public static boolean hasCSVFormat(MultipartFile file) {
         return !file.isEmpty() && TYPE.equals(file.getContentType());

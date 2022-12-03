@@ -25,7 +25,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class ExerciseServiceTest {
+ class ExerciseServiceTest {
     @Autowired
     private ExerciseService exerciseService;
     @Autowired
@@ -33,30 +33,22 @@ public class ExerciseServiceTest {
 
 
     @Test
-    public void testGetByIdAfter_Insertion() {
-        Exercise initialObject = TestDataHelper.getNewExercise(21L);
-        initialObject.setCode("New_Code");
-        exerciseRepository.save(initialObject);
-        Optional<Exercise> dataEntity = exerciseRepository.findById(21L);
-        Assert.assertEquals(initialObject.getCode(), dataEntity.get().getCode());
-    }
-
-    @Test
-    public void testGetByCode_After_Insertion() {
+     void testGetByCode_After_Insertion() {
         Exercise initialObject = TestDataHelper.getNewExercise(7L);
+         initialObject.setCode("7L_New_Code");
         exerciseRepository.save(initialObject);
-        Optional<Exercise> dataEntity = Optional.ofNullable(exerciseRepository.getByCode(initialObject.getCode()));
-        assertThat(dataEntity.get().getCode()).isNotNull();
+        Exercise dataEntity = exerciseRepository.getByCode(initialObject.getCode());
+        assertThat(dataEntity.getCode()).isNotNull();
     }
 
     @Test
-    public void testGetAll() {
+     void testGetAll() {
         List<Exercise> dataEntities = exerciseRepository.findAll();
         assertThat(dataEntities).isNotNull();
     }
 
     @Test
-    public void testGetAll_After_Insertion() {
+     void testGetAll_After_Insertion() {
         Exercise initialObject = TestDataHelper.getNewExercise(20L);
         initialObject.setCode("20L_Code");
         exerciseRepository.save(initialObject);
@@ -65,7 +57,7 @@ public class ExerciseServiceTest {
     }
 
     @Test
-    public void test_File_Upload() throws IOException {
+     void test_File_Upload() throws IOException {
         File file = new File("src/test/resources/static/exercise.csv");
         MockMultipartFile multipartFile =
                 new MockMultipartFile("file", "exercise.csv", "text/csv",

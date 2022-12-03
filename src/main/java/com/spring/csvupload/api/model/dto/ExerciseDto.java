@@ -1,6 +1,5 @@
 package com.spring.csvupload.api.model.dto;
 
-import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,7 +14,6 @@ import java.util.Date;
 public class ExerciseDto {
     private String source;
     private String codeListCode;
-    @NotNull
     private String code;
     private String displayValue;
     private String longDescription;

@@ -19,6 +19,10 @@
         <cucumber.version>6.8.1</cucumber.version>
         <sonar.organization>santhoshvernekar</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.exclusions>**/error/*,**/config/*,**/converter/*, ,**/error/*.*, **/config/*.*
+        </sonar.exclusions>
+        <sonar.coverage.exclusions>**/error/*,**/converter/*, **/config/*
+        </sonar.coverage.exclusions>
     </properties>
     <dependencies>
         <dependency>
@@ -109,6 +113,11 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>3.0.0-M4</version>
                 <configuration>
+                    <excludes>
+                        <exclude>**/error/*.*</exclude>
+                        <exclude>**/config/*.*</exclude>
+                        <exclude>**/converter/*.*</exclude>
+                    </excludes>
                     <includes>
                     </includes>
                 </configuration>
@@ -126,6 +135,11 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.5</version>
                 <configuration>
+                    <excludes>
+                        <exclude>**/error/*</exclude>
+                        <exclude>**/config/*</exclude>
+                        <exclude>**/converter/*</exclude>
+                    </excludes>
                     <rules>
                         <rule implementation="org.jacoco.maven.RuleConfiguration">
                             <element>BUNDLE</element>

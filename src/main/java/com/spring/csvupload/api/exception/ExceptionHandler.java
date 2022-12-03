@@ -17,7 +17,7 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
         ExceptionResponse exceptionResponse = new ExceptionResponse();
         exceptionResponse.setMessage(ex.getMessage());
         exceptionResponse.setStatusCode(HttpStatus.BAD_REQUEST);
-        logError(ex, HttpStatus.BAD_REQUEST);
+        logError(ex, HttpStatus.BAD_REQUEST.value());
         return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
     }
 
@@ -26,7 +26,7 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
         ExceptionResponse exceptionResponse = new ExceptionResponse();
         exceptionResponse.setMessage(ex.getMessage());
         exceptionResponse.setStatusCode(HttpStatus.BAD_REQUEST);
-        logError(ex, HttpStatus.BAD_REQUEST);
+        logError(ex, HttpStatus.BAD_REQUEST.value());
         return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
     }
 
@@ -35,7 +35,7 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
         ExceptionResponse exceptionResponse = new ExceptionResponse();
         exceptionResponse.setMessage(ISSUE_DURING_PROCESSING_REQUEST_PLEASE_CONTACT_APPLICATION_TEAM);
         exceptionResponse.setStatusCode(HttpStatus.BAD_REQUEST);
-        logError(ex, HttpStatus.BAD_REQUEST);
+        logError(ex, HttpStatus.BAD_REQUEST.value());
         return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
     }
 
@@ -44,7 +44,7 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
         ExceptionResponse exceptionResponse = new ExceptionResponse();
         exceptionResponse.setMessage("Access issue, please contact Application team");
         exceptionResponse.setStatusCode(HttpStatus.FORBIDDEN);
-        logError(ex, HttpStatus.FORBIDDEN);
+        logError(ex, HttpStatus.FORBIDDEN.value());
         return new ResponseEntity<>(exceptionResponse, HttpStatus.FORBIDDEN);
     }
 
@@ -54,7 +54,7 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
         ExceptionResponse exceptionResponse = new ExceptionResponse();
         exceptionResponse.setMessage(ex.getMessage());
         exceptionResponse.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR);
-        logError(ex, HttpStatus.INTERNAL_SERVER_ERROR);
+        logError(ex, HttpStatus.INTERNAL_SERVER_ERROR.value());
         return new ResponseEntity<>(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
@@ -63,13 +63,13 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
         ExceptionResponse exceptionResponse = new ExceptionResponse();
         exceptionResponse.setMessage(ex.getMessage());
         exceptionResponse.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR);
-        logError(ex, HttpStatus.INTERNAL_SERVER_ERROR);
+        logError(ex, HttpStatus.INTERNAL_SERVER_ERROR.value());
         return new ResponseEntity<>(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    public static void logError(Exception exception, HttpStatus statusCode) {
+    public static void logError(Exception exception, int statusCode) {
         log.error("Exception Cause Message : {}", exception.getMessage());
         log.error("Exception Localised Message : {}", exception.getLocalizedMessage());
-        log.error("Returned Status: {}", HttpStatus.MULTI_STATUS.value());
+        log.error("Returned Status: {}", statusCode);
     }
 }

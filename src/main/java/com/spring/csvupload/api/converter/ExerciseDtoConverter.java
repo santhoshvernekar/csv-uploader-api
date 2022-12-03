@@ -47,5 +47,8 @@ public class ExerciseDtoConverter {
         return dtoList;
     }
 
+    private ExerciseDtoConverter(){
+        // Do Nothing
+    }
 
 }

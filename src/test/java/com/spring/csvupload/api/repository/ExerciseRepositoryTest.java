@@ -22,7 +22,7 @@ public class ExerciseRepositoryTest {
     @Test
     public void test_Find_All() {
         List<Exercise> exerciseList = exerciseRepository.findAll();
-        Assert.assertEquals(exerciseList.size(), 0);
+        Assert.assertEquals( 0, exerciseList.size());
     }
 
     @Test

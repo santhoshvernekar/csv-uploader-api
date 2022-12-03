@@ -18,4 +18,7 @@ public class DateConverter {
         }
 
     }
+    private DateConverter(){
+        // Do Nothing
+    }
 }
