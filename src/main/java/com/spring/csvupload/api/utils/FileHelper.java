@@ -32,13 +32,13 @@ public class FileHelper {
         try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
              CSVParser csvParser = new CSVParser(fileReader,
                      CSVFormat.DEFAULT.withFirstRecordAsHeader().withIgnoreHeaderCase().withTrim())) {
-            List<ExerciseDto> ExerciseDtoList = new ArrayList<>();
+            List<ExerciseDto> exerciseDtos = new ArrayList<>();
             Iterable<CSVRecord> csvRecords = csvParser.getRecords();
             for (CSVRecord csvRecord : csvRecords) {
                 ExerciseDto exerciseDto = getExerciseDto(csvRecord);
-                ExerciseDtoList.add(exerciseDto);
+                exerciseDtos.add(exerciseDto);
             }
-            return ExerciseDtoList;
+            return exerciseDtos;
         } catch (IOException e) {
             throw ApplicationException.to("Fail to parse CSV file: %s", e.getMessage());
         }
