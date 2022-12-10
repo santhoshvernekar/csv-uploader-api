@@ -5,7 +5,6 @@ import com.spring.csvupload.api.model.entity.Exercise;
 import com.spring.csvupload.api.repository.ExerciseRepository;
 import com.spring.csvupload.api.service.impl.ExerciseService;
 import com.spring.csvupload.api.utils.TestDataHelper;
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.List;
-import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

@@ -9,5 +9,6 @@ public class SpringBootMainTest {
 
     @Test
     public void contextLoads() {
+        // Do nothing
     }
 }

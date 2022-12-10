@@ -5,8 +5,6 @@ import com.spring.csvupload.api.model.entity.Exercise;
 
 public class TestDataHelper {
 
-    public static final ObjectMapper MAPPER = new ObjectMapper();
-
     public static Exercise getNewExercise(long id) {
         return Exercise.builder()
                 .code("Test_Code")
