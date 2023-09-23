@@ -10,14 +10,14 @@ steps:
     mavenPomFile: 'pom.xml'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    codeCoverageToolOption: 'JaCoCo'
-    codeCoverageClassFilesDirectories: '$(System.DefaultWorkingDirectory)/**/target/classes'
-    codeCoverageSourceDirectories: '$(System.DefaultWorkingDirectory)/**/src/main/java/'
+    # codeCoverageToolOption: 'JaCoCo'
+    # codeCoverageClassFilesDirectories: '$(System.DefaultWorkingDirectory)/**/target/classes'
+    # codeCoverageSourceDirectories: '$(System.DefaultWorkingDirectory)/**/src/main/java/'
     javaHomeOption: 'JDKVersion'
     mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
-    sonarQubeRunAnalysis: true
-    isJacocoCoverageReportXML: true
+    # sonarQubeRunAnalysis: true
+    # isJacocoCoverageReportXML: true
     sqMavenPluginVersionChoice: 'latest'
     checkStyleRunAnalysis: true
