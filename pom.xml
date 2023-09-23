@@ -10,14 +10,14 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.spring.crud.demo</groupId>
-    <artifactId>sample-spring-boot-bank-api</artifactId>
+    <artifactId>csv-uploader-api</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>csv-uploader-api</name>
     <description>Spring boot API code for uploading csv file to database</description>
     <properties>
         <java.version>1.8</java.version>
         <cucumber.version>6.8.1</cucumber.version>
-        <sonar.organization>santhoshvernekar</sonar.organization>
+        <sonar.organization>san-sample-projects</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.exclusions>**/error/*,**/config/*,**/converter/*, **/*ExceptionHandler*.*, ,**/error/*.*, **/config/*.*
         </sonar.exclusions>
