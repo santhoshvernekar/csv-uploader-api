@@ -20,4 +20,4 @@ steps:
     sonarQubeRunAnalysis: true
     isJacocoCoverageReportXML: true
     sqMavenPluginVersionChoice: 'latest'
-    # checkStyleRunAnalysis: true
+    checkStyleRunAnalysis: true
