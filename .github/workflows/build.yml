@@ -17,8 +17,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: Azure Pipeline
-        uses: actions/setup-java@v1
+      - name: Azure Pipelines Action
+        uses: Azure/pipelines@v1
         with:
           azure-devops-project-url: 'https://dev.azure.com/santoshmv121/sample-project'
           azure-pipeline-name: 'santhoshvernekar.csv-uploader-api'
