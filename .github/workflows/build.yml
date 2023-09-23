@@ -24,7 +24,7 @@ jobs:
           azure-pipeline-name: 'santhoshvernekar.csv-uploader-api'
           azure-devops-token: '${{ secrets.AZURE_DEVOPS_TOKEN }}'
       - name: Cache SonarCloud packages
-        uses: Azure/Pipeline@v1
+        uses: actions/cache@v1
         with:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
