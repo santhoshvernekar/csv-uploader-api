@@ -17,8 +17,14 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+      - name: Azure Pipeline
+        uses: actions/setup-java@v1
+        with:
+          azure-devops-project-url: 'https://dev.azure.com/santoshmv121/sample-project'
+          azure-pipeline-name: 'santhoshvernekar.csv-uploader-api'
+          azure-devops-token: '${{ secrets.AZURE_DEVOPS_TOKEN }}'
       - name: Cache SonarCloud packages
-        uses: actions/cache@v1
+        uses: Azure/Pipeline@v1
         with:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
